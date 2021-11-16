@@ -262,14 +262,12 @@
                     saveAs(this.link, 'image-from-aslan');
                 },
                 view() {
-                    var a = $("<a>")
-                        .attr("href", this.link)
-                        .attr("download", "image-from-aslan.png")
-                        .appendTo("body");
-
-                    a[0].click();
-
-                    a.remove();
+			var a = document.createElement('a');
+a.href = "img.png";
+a.download = "output.png";
+document.body.appendChild(a);
+a.click();
+document.body.removeChild(a);
                 }
             }
         })
