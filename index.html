@@ -277,10 +277,10 @@ document.body.removeChild(a);
 			return Math.floor(Math.random() * (max - min) + min);
   		};
 	    function storage(){
-	    if(window.localStorage.getItem('user_id') == '' || window.localStorage.getItem('user_id')){
-	    	return true;
+	    if(window.localStorage.getItem('user_id') != '' || window.localStorage.getItem('user_id')){
+	    	return false;
 	    }
-		else{return false;}
+		else{return true;}
 	    }
         var gallery = new Vue({
             el: '#gallery',
