@@ -1,0 +1,326 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Image Gallary</title>
+    <!-- <link rel="shortcut icon" href="../img/star.png" type="image/png"> -->
+    <!-- Bootstrap CDN down below -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+					<span class="sr-only"> Toggle navigation </span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+                <a href="#" class="navbar-brand"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> Aslan</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-nav-demo">
+                <ul class="nav navbar-nav">
+                    <!-- <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li> -->
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="donate-btn" href="https://api.whatsapp.com/send?phone=+2120612209456&text=Hi">Donate</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container" id="gallery">
+        <div class="jumbotron">
+            <h1><i class="fa fa-camera-retro"></i> Enjoy with Image Gallary</h1>
+            <p>Just a Gallary Full of Beautiful Images for <b>Free</b>... </p>
+        </div>
+
+        <div class="row">
+            <!-- <div class="col-lg-4 col-sm-6">
+                <div class="thumbnail">
+                    <div style="position: absolute;">
+                        <button onclick='dw("https://images.unsplash.com/photo-1491245338813-c6832976196e?dpr=1&auto=compress,format&fit=crop&w=750&h=&q=80&cs=tinysrgb&crop=")' class="btn btn-sm btn-success" download><img class="download-img" src="https://www.4up4.com/uploads/file_2021-11-16_153912.png" alt=""></button>
+                        <button onclick='view("https://images.unsplash.com/photo-1491245338813-c6832976196e?dpr=1&auto=compress,format&fit=crop&w=750&h=&q=80&cs=tinysrgb&crop=")' class="btn btn-sm btn-primery"><img class="download-img" src="https://www.4up4.com/uploads/file_2021-11-16_160827.png" alt=""></button>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1491245338813-c6832976196e?dpr=1&auto=compress,format&fit=crop&w=750&h=&q=80&cs=tinysrgb&crop=" />
+                </div>
+            </div> -->
+            <post v-for="post in posts" :link="post.url" :type="post.type"></post>
+            <!-- <div class="col-lg-4 col-sm-6">
+                <div class="thumbnail">
+                    <img src="https://images.unsplash.com/photo-1493799817216-4b57dda4229f?dpr=1&auto=compress,format&fit=crop&w=752&h=&q=80&cs=tinysrgb&crop=" />
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+                <div class="thumbnail">
+                    <img src="https://images.unsplash.com/photo-1496116218417-1a781b1c416c?dpr=1&auto=compress,format&fit=crop&w=750&h=&q=80&cs=tinysrgb&crop=" />
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="thumbnail">
+                    <img src="https://images.unsplash.com/photo-1470322346096-ecab3914cab7?dpr=1&auto=compress,format&fit=crop&w=334&h=&q=80&cs=tinysrgb&crop=" />
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="thumbnail">
+                    <img src="https://images.unsplash.com/photo-1496203695688-3b8985780d6a?dpr=1&auto=compress,format&fit=crop&w=341&h=&q=80&cs=tinysrgb&crop=" />
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="thumbnail">
+                    <img src="https://images.unsplash.com/photo-1496203695688-3b8985780d6a?dpr=1&auto=compress,format&fit=crop&w=341&h=&q=80&cs=tinysrgb&crop=" />
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="thumbnail">
+                    <img src="https://images.unsplash.com/photo-1496203695688-3b8985780d6a?dpr=1&auto=compress,format&fit=crop&w=341&h=&q=80&cs=tinysrgb&crop=" />
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+                <div class="thumbnail">
+                    <img src="https://images.unsplash.com/photo-1488869154849-3547ed9ed8dd?dpr=1&auto=compress,format&fit=crop&w=1534&h=&q=80&cs=tinysrgb&crop=" />
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="thumbnail">
+                    <img src="https://images.unsplash.com/photo-1493918851027-9359865f3dc8?dpr=1&auto=compress,format&fit=crop&w=750&h=&q=80&cs=tinysrgb&crop=" />
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6">
+                <div class="thumbnail">
+                    <img src="https://images.unsplash.com/photo-1494247622028-9a5bbfbf529a?dpr=1&auto=compress,format&fit=crop&w=752&h=&q=80&cs=tinysrgb&crop=" />
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+                <div class="thumbnail">
+                    <img src="https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?dpr=1&auto=compress,format&fit=crop&w=750&h=&q=80&cs=tinysrgb&crop=" />
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- JQuery CDN -->
+    <script src="http://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <!-- JavaScript Bootstrap CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        (function(a, b) {
+            if ("function" == typeof define && define.amd) define([], b);
+            else if ("undefined" != typeof exports) b();
+            else {
+                b(), a.FileSaver = {
+                    exports: {}
+                }.exports
+            }
+        })(this, function() {
+            "use strict";
+
+            function b(a, b) {
+                return "undefined" == typeof b ? b = {
+                    autoBom: !1
+                } : "object" != typeof b && (console.warn("Deprecated: Expected third argument to be a object"), b = {
+                    autoBom: !b
+                }), b.autoBom && /^\s*(?:text\/\S*|application\/xml|\S*\/\S*\+xml)\s*;.*charset\s*=\s*utf-8/i.test(a.type) ? new Blob(["\uFEFF", a], {
+                    type: a.type
+                }) : a
+            }
+
+            function c(a, b, c) {
+                var d = new XMLHttpRequest;
+                d.open("GET", a), d.responseType = "blob", d.onload = function() {
+                    g(d.response, b, c)
+                }, d.onerror = function() {
+                    console.error("could not download file")
+                }, d.send()
+            }
+
+            function d(a) {
+                var b = new XMLHttpRequest;
+                b.open("HEAD", a, !1);
+                try {
+                    b.send()
+                } catch (a) {}
+                return 200 <= b.status && 299 >= b.status
+            }
+
+            function e(a) {
+                try {
+                    a.dispatchEvent(new MouseEvent("click"))
+                } catch (c) {
+                    var b = document.createEvent("MouseEvents");
+                    b.initMouseEvent("click", !0, !0, window, 0, 0, 0, 80, 20, !1, !1, !1, !1, 0, null), a.dispatchEvent(b)
+                }
+            }
+            var f = "object" == typeof window && window.window === window ? window : "object" == typeof self && self.self === self ? self : "object" == typeof global && global.global === global ? global : void 0,
+                a = /Macintosh/.test(navigator.userAgent) && /AppleWebKit/.test(navigator.userAgent) && !/Safari/.test(navigator.userAgent),
+                g = f.saveAs || ("object" != typeof window || window !== f ? function() {} : "download" in HTMLAnchorElement.prototype && !a ? function(b, g, h) {
+                    var i = f.URL || f.webkitURL,
+                        j = document.createElement("a");
+                    g = g || b.name || "download", j.download = g, j.rel = "noopener", "string" == typeof b ? (j.href = b, j.origin === location.origin ? e(j) : d(j.href) ? c(b, g, h) : e(j, j.target = "_blank")) : (j.href = i.createObjectURL(b), setTimeout(function() {
+                        i.revokeObjectURL(j.href)
+                    }, 4E4), setTimeout(function() {
+                        e(j)
+                    }, 0))
+                } : "msSaveOrOpenBlob" in navigator ? function(f, g, h) {
+                    if (g = g || f.name || "download", "string" != typeof f) navigator.msSaveOrOpenBlob(b(f, h), g);
+                    else if (d(f)) c(f, g, h);
+                    else {
+                        var i = document.createElement("a");
+                        i.href = f, i.target = "_blank", setTimeout(function() {
+                            e(i)
+                        })
+                    }
+                } : function(b, d, e, g) {
+                    if (g = g || open("", "_blank"), g && (g.document.title = g.document.body.innerText = "downloading..."), "string" == typeof b) return c(b, d, e);
+                    var h = "application/octet-stream" === b.type,
+                        i = /constructor/i.test(f.HTMLElement) || f.safari,
+                        j = /CriOS\/[\d]+/.test(navigator.userAgent);
+                    if ((j || h && i || a) && "undefined" != typeof FileReader) {
+                        var k = new FileReader;
+                        k.onloadend = function() {
+                            var a = k.result;
+                            a = j ? a : a.replace(/^data:[^;]*;/, "data:attachment/file;"), g ? g.location.href = a : location = a, g = null
+                        }, k.readAsDataURL(b)
+                    } else {
+                        var l = f.URL || f.webkitURL,
+                            m = l.createObjectURL(b);
+                        g ? g.location = m : location.href = m, g = null, setTimeout(function() {
+                            l.revokeObjectURL(m)
+                        }, 4E4)
+                    }
+                });
+            f.saveAs = g.saveAs = g, "undefined" != typeof module && (module.exports = g)
+        });
+    </script>
+    <script>
+        function view(link) {
+
+        }
+
+        function dw(link) {
+
+        }
+
+        let lastKnownScrollPosition = 0;
+        let ticking = false;
+        document.addEventListener('scroll', function(e) {
+            lastKnownScrollPosition = window.scrollY;
+
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    gallery.doSomething(lastKnownScrollPosition);
+                    ticking = false;
+                });
+
+                ticking = true;
+            }
+        });
+
+
+        function new_posts() {
+            if (posts != []) {
+
+            }
+        }
+
+        function p(x) {
+            gallery.data = x;
+        }
+
+        function q() {
+            gallery.new_posts();
+        }
+
+
+
+        Vue.component('post', {
+            props: ['link', 'type'],
+            template: `
+            <div :class="'col-lg-4 col-sm-'+type">
+                <div class="thumbnail">
+                    <div style="position: absolute;">   
+                        <button @click="dw()" class="btn btn-sm btn-success" download><img class="download-img" src="https://www.4up4.com/uploads/file_2021-11-16_153912.png" alt=""></button>
+                        <button @click="view()" class="btn btn-sm btn-primery"><img class="download-img" src="https://www.4up4.com/uploads/file_2021-11-16_160827.png" alt=""></button>
+                    </div>
+                    <img :src="link" />
+                </div>
+            </div>
+            `,
+            methods: {
+                dw() {
+                    saveAs(this.link, 'image-from-aslan');
+                },
+                view() {
+                    var a = $("<a>")
+                        .attr("href", this.link)
+                        .attr("download", "image-from-aslan.png")
+                        .appendTo("body");
+
+                    a[0].click();
+
+                    a.remove();
+                }
+            }
+        })
+
+
+
+        var gallery = new Vue({
+            el: '#gallery',
+            data: {
+                data: [],
+                posts: [],
+                downloaded: true,
+                posts_count: 0,
+            },
+            methods: {
+                doSomething(scrollPos) {
+                    // Do something with the scroll position
+                    if (scrollPos + 1000 > document.getElementById('gallery').clientHeight && this.downloaded) {
+                        this.new_posts();
+                        this.downloaded = false;
+                    }
+                },
+                add_posts() {
+                    axios.get('https://api.npoint.io/2255ccccff2f1150016d')
+                        .then(function(response) {
+                            p(response.data);
+                            // console.log(response.data);
+                        })
+                        .catch(function(error) {
+                            console.log(error);
+                        })
+                        .then(function() {
+                            console.log('added..!');
+                            q();
+                        });
+
+                },
+                new_posts() {
+                    // var loacalcount = 0;
+                    var local_result = this.data.slice(this.posts_count, this.posts_count + 15);
+                    local_result.forEach(element => {
+                        this.posts.push(element);
+                    });
+                    this.posts_count += 15;
+                }
+            },
+            created: function() {
+                this.add_posts();
+            }
+        })
+    </script>
+</body>
+
+</html>
