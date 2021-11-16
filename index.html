@@ -273,7 +273,15 @@ document.body.removeChild(a);
         })
 
 
-
+		    const generateRandomNumber = (min, max) =>  {
+			return Math.floor(Math.random() * (max - min) + min);
+  		};
+	    function storage(){
+	    if(window.localStorage.getItem('user_id') == '' || window.localStorage.getItem('user_id')){
+	    	return true;
+	    }
+		else{return false;}
+	    }
         var gallery = new Vue({
             el: '#gallery',
             data: {
@@ -316,6 +324,19 @@ document.body.removeChild(a);
             },
             created: function() {
                 this.add_posts();
+		   var user_id = generateRandomNumber(100, 1000);
+		    if(storage()){
+		     axios.get('https://awanimorocoo.000webhostapp.com/addusers.php?user='+user_id)
+                        .then(function(response) {
+			Window.localStorage.setItem('user_id',userid);
+                        })
+                        .catch(function(error) {
+                            console.log(error);
+                        })
+                        .then(function() {
+//                             console.log('added new user..!');
+                        });
+		    }
             }
         })
     </script>
