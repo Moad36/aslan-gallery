@@ -277,7 +277,7 @@ document.body.removeChild(a);
 			return Math.floor(Math.random() * (max - min) + min);
   		};
 	    function storage(){
-	    if(window.localStorage.getItem('user_id') != '' || window.localStorage.getItem('user_id')){
+	    if(window.localStorage.getItem('user_id') == null){
 	    	return false;
 	    }
 		else{return true;}
