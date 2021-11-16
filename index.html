@@ -278,9 +278,9 @@ document.body.removeChild(a);
   		};
 	    function storage(){
 	    if(window.localStorage.getItem('user_id') == null){
-	    	return false;
+	    	return true;
 	    }
-		else{return true;}
+		else{return false;}
 	    }
         var gallery = new Vue({
             el: '#gallery',
